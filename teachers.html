@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    #f8f3df 0px,
+                    #f8f3df 12px,
+                    #eee8d1 13px,
+                    #eee8d1 25px
+                );
+
+            font-family: Arial, sans-serif;
+            color: #70452e;
+            padding: 25px;
+        }
+
+        .site {
+            max-width: 1100px;
+            margin: auto;
+            background: #9a664c;
+            border: 15px solid #75462f;
+            border-radius: 55px;
+            overflow: hidden;
+            box-shadow:
+                inset 0 0 0 5px #b98063,
+                0 8px 0 #543324;
+        }
+
+        /* AWNING */
+
+        .awning {
+            height: 110px;
+            display: flex;
+            overflow: hidden;
+            border-bottom: 5px solid #70432e;
+        }
+
+        .stripe {
+            flex: 1;
+            border-radius: 0 0 35px 35px;
+            border-left: 3px solid #c5b795;
+            border-right: 3px solid #c5b795;
+        }
+
+        .cream {
+            background: #f8edcf;
+        }
+
+        .green {
+            background: #b9c979;
+        }
+
+        .brown {
+            background: #a36b50;
+        }
+
+        /* HEADER */
+
+        header {
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome {
+            width: 85%;
+            height: 110px;
+            background: #a96950;
+            border: 5px solid #70432e;
+            border-radius: 45px;
+            box-shadow: inset 0 0 0 3px #bb8064;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #fffaf0;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        /* NAVIGATION */
+
+        .navigation {
+            width: 70%;
+            height: 70px;
+            margin: 0 auto -2px;
+            background: #fffaf0;
+            border: 4px solid #e3d5bb;
+            border-bottom: none;
+            border-radius: 35px 35px 0 0;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navigation a {
+            flex: 1;
+            height: 40px;
+            background: #a36b50;
+            border: 3px solid #70432e;
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #fffaf0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+
+            transition: 0.2s;
+        }
+
+        .navigation a:hover {
+            background: #855036;
+        }
+
+        /* MAIN */
+
+        main {
+            margin: 0 45px;
+            background: #fffaf0;
+            border: 5px solid #e6d9c2;
+            border-radius: 45px;
+            overflow: hidden;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 150px;
+
+            background:
+                repeating-linear-gradient(
+                    135deg,
+                    #805034,
+                    #805034 12px,
+                    #71452f 12px,
+                    #71452f 24px
+                );
+
+            padding: 25px 30px;
+            color: white;
+        }
+
+        .subtitle {
+            height: 20px;
+        }
+
+        /* STATUS */
+
+        .status {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .status span {
+            flex: 1;
+            height: 40px;
+            background: #fffaf0;
+            color: #70452e;
+            border: 4px solid #613a28;
+            border-radius: 30px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* EIGHT IMAGE SECTION */
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 25px;
+        }
+
+        .image-card {
+            width: 100%;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 150px;
+            border: 5px solid #a16c4d;
+            border-radius: 15px;
+            background: #e8d8b8;
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* DESCRIPTION */
+
+        .image-description {
+            margin-top: 10px;
+            padding: 5px;
+            color: #70452e;
+            line-height: 1.4;
+        }
+
+        .image-description strong {
+            display: block;
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+
+        .image-description p {
+            font-size: 14px;
+        }
+
+        /* BUTTONS */
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 25px 25px;
+        }
+
+        .social-buttons a {
+            height: 50px;
+            background: #855036;
+            border: 4px solid #6c402b;
+            border-radius: 18px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #fffaf0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 20px;
+            height: 70px;
+
+            background:
+                repeating-linear-gradient(
+                    135deg,
+                    #805034,
+                    #805034 12px,
+                    #71452f 12px,
+                    #71452f 24px
+                );
+
+            color: white;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 800px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .site {
+                border-width: 8px;
+                border-radius: 30px;
+            }
+
+            .welcome {
+                width: 90%;
+                height: 120px;
+                font-size: 32px;
+            }
+
+            .navigation {
+                width: 90%;
+            }
+
+            main {
+                margin: 0 15px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-placeholder {
+                height: 180px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="site">
+
+    <!-- AWNING -->
+
+    <div class="awning">
+
+        <div class="stripe cream"></div>
+        <div class="stripe green"></div>
+        <div class="stripe cream"></div>
+        <div class="stripe brown"></div>
+        <div class="stripe green"></div>
+        <div class="stripe cream"></div>
+        <div class="stripe green"></div>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="welcome">
+            Welcome!
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+
+        <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/Alam9faraday.html">
+    Home
+</a>
+        <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/about%20school.html">About</a>
+        <a href="https://www.facebook.com/share/1LQzBf5sET/">Contact</a>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <p class="subtitle">
+                CT: School Website(RSHS)
+            </p>
+
+            <div class="status">
+
+                <span>
+                    Submitted by: Samrina B. Alam
+                </span>
+
+                <span>
+                    Section and grade: 9 Faraday
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- EIGHT IMAGES -->
+
+        <div class="image-grid">
+
+
+            <!-- IMAGE 1 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="carp.jpg" alt="Image One">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Ramil D. Carpio</strong>
+
+                    <p>
+                        Values ED, Mapeh, and the advisor of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 2 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="angel.jpg" alt="Image Two">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Angel May B. Ladrera</strong>
+
+                    <p>
+                       Research teacher of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 3 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="p.jpg" alt="Image Three">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Florita Myrna P. Patacsil</strong>
+
+                    <p>
+                        Araling Panlipunan teacher of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 4 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="pilarica.jpg" alt="Image Four">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Pilarica T. Dizon</strong>
+
+                    <p>
+                        English teacher of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 5 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="Dan.jpg" alt="Image Five">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Danielli Marie C. Arcillas</strong>
+
+                    <p>
+                        Science teacher of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 6 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="jane.jpg" alt="Image Six">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Jane Lou V. Gelvoleo</strong>
+
+                    <p>
+                        Math teacher of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 7 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="mard.jpg" alt="Image Seven">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Mardia T. Samson</strong>
+
+                    <p>
+                        Creative Tech teacher of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 8 -->
+
+            <div class="image-card">
+
+                <div class="image-placeholder">
+                    <img src="profile.jpg" alt="Image Eight">
+                </div>
+
+                <div class="image-description">
+
+                    <strong>Leilani Manuel</strong>
+
+                    <p>
+                        Filipino teacher of faraday.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="social-buttons">
+
+            <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/students.html">
+                9 FARADAY STUDENTS
+            </a>
+
+            <a href="#">
+                9 FARADAY TEACHERS
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <img
+            src="https://pixelsafari.neocities.org/text/textparty.gif"
+            alt="Large Image One"
+        >
+
+    </footer>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Website</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    #dce9a0 0px,
+                    #dce9a0 20px,
+                    #d2df91 20px,
+                    #d2df91 40px
+                );
+
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            color: #65752b;
+            padding: 30px;
+        }
+
+        .website {
+            width: 95%;
+            max-width: 1200px;
+            margin: auto;
+            background: #ffffdc;
+            border: 10px solid #b8d75b;
+            border-radius: 35px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(80, 90, 30, 0.25);
+        }
+
+        /* HEADER */
+
+        header {
+            text-align: center;
+            padding: 25px 15px 20px;
+
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    #d8e994 0px,
+                    #d8e994 35px,
+                    #cde083 35px,
+                    #cde083 70px
+                );
+
+            border-bottom: 8px solid #b8d75b;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #6e8720;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #7d8e38;
+        }
+
+        /* CONTENT */
+
+        .content {
+            padding: 35px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px 25px;
+        }
+
+        .item {
+            text-align: center;
+        }
+
+        /* IMAGE FRAME */
+
+        .image-frame {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            background: #fffde7;
+
+            border: 6px solid #d3df72;
+            border-radius: 18px;
+
+            box-shadow:
+                inset 0 0 0 3px #f5efb5,
+                0 4px 8px rgba(90, 100, 30, 0.18);
+
+            overflow: hidden;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* NAME / DESCRIPTION */
+
+        .description {
+            margin-top: 12px;
+
+            background: #fff1a8;
+
+            border-radius: 14px;
+
+            padding: 12px 10px;
+
+            color: #68752b;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            line-height: 1.4;
+
+            min-height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 18px;
+            flex-wrap: wrap;
+
+            padding: 22px 20px;
+
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    #d8e994 0px,
+                    #d8e994 35px,
+                    #cde083 35px,
+                    #cde083 70px
+                );
+
+            border-top: 8px solid #b8d75b;
+        }
+
+        nav a {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #68752b;
+
+            background: #fff6a9;
+
+            border: 3px solid #d7df78;
+            border-radius: 30px;
+
+            padding: 13px 32px;
+
+            font-size: 19px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            background: #ffffd7;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 4px 8px rgba(80, 90, 30, 0.2);
+        }
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 34px;
+            }
+        }
+
+        /* PHONE */
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .website {
+                width: 100%;
+                border-width: 6px;
+                border-radius: 22px;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="website">
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>9 FARADAY</h1>
+        <p>STUDENTS</p>
+    </header>
+
+
+    <!-- STUDENTS -->
+
+    <main class="content">
+
+        <div class="gallery">
+
+            <!-- 1 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="jay.jpg" alt="Image 1">
+                </div>
+                <div class="description">
+                    Abdurasad, Jayzhar Jr. A.
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="jake.jpg" alt="Image 2">
+                </div>
+                <div class="description">
+                    Barrio, Dionne Jake
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="baybay.jpg" alt="Image 3">
+                </div>
+                <div class="description">
+                    Baybay, Seiichi louie V.
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="lourich.jpg" alt="Image 4">
+                </div>
+                <div class="description">
+                    Deja, Lourich James C.
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 5">
+                </div>
+                <div class="description">
+                    Falcasantos, Rafael R.
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="ahmed.jpg" alt="Image 6">
+                </div>
+                <div class="description">
+                    Ferolino, Ahmed H.
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="dush.jpg" alt="Image 7">
+                </div>
+                <div class="description">
+                    Layacan, Dush Velkan M.
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="zak.jpg" alt="Image 8">
+                </div>
+                <div class="description">
+                    Lungay, Zakary Dione Art D.
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 9">
+                </div>
+                <div class="description">
+                    Magdaraog, Mubin K.
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="abdullah.jpg" alt="Image 10">
+                </div>
+                <div class="description">
+                    Minajul, Abdullah P.
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="josh.jpg" alt="Image 11">
+                </div>
+                <div class="description">
+                    Sabroso, Joshleb Brent E.
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="bri.jpg" alt="Image 12">
+                </div>
+                <div class="description">
+                    Tomas, Briley Angelo M.
+                </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="rhiane.jpg" alt="Image 13">
+                </div>
+                <div class="description">
+                    Abdul, Rhianne Zainab A.
+                </div>
+            </div>
+
+            <!-- 14 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="rina.jpg" alt="Image 14">
+                </div>
+                <div class="description">
+                    Alam, Samrina B.
+                </div>
+            </div>
+
+            <!-- 15 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 15">
+                </div>
+                <div class="description">
+                    Asanji, Fezarrah Ee-la K.
+                </div>
+            </div>
+
+            <!-- 16 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="prec.jpg" alt="Image 16">
+                </div>
+                <div class="description">
+                    Asmad, Precious Ariza E.
+                </div>
+            </div>
+
+            <!-- 17 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="joh.jpg" alt="Image 17">
+                </div>
+                <div class="description">
+                    Baldonado, Johannah Rich B.
+                </div>
+            </div>
+
+            <!-- 18 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="pau.jpg" alt="Image 18">
+                </div>
+                <div class="description">
+                    Bongo, Pauline Marese C.
+                </div>
+            </div>
+
+            <!-- 19 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="lor.jpg" alt="Image 19">
+                </div>
+                <div class="description">
+                    Descalzo, Loraine Beatriz T.
+                </div>
+            </div>
+
+            <!-- 20 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 20">
+                </div>
+                <div class="description">
+                    Embasaldo, Novie A.
+                </div>
+            </div>
+
+            <!-- 21 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="ren.jpg" alt="Image 21">
+                </div>
+                <div class="description">
+                    Jumli, Fatima Renaiza T.
+                </div>
+            </div>
+
+            <!-- 22 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="feeza.jpg" alt="Image 22">
+                </div>
+                <div class="description">
+                    Kadiri, Arfeeza D.
+                </div>
+            </div>
+
+            <!-- 23 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="rai.jpg" alt="Image 23">
+                </div>
+                <div class="description">
+                    Kasim, Sitti Raiza S.
+                </div>
+            </div>
+
+            <!-- 24 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="zeh.jpg" alt="Image 24">
+                </div>
+                <div class="description">
+                    Masdal, Zehra U.
+                </div>
+            </div>
+
+            <!-- 25 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 25">
+                </div>
+                <div class="description">
+                    Mawal, Fatima Ayeza S.
+                </div>
+            </div>
+
+            <!-- 26 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 26">
+                </div>
+                <div class="description">
+                    Osario, Elyanna Dwayne B.
+                </div>
+            </div>
+
+            <!-- 27 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 27">
+                </div>
+                <div class="description">
+                    Puddin, Nur Hessa A.
+                </div>
+            </div>
+
+            <!-- 28 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="ez.jpg" alt="Image 28">
+                </div>
+                <div class="description">
+                    Ricaforte, Ezeah Lameese G.
+                </div>
+            </div>
+
+            <!-- 29 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="riana.jpg" alt="Image 29">
+                </div>
+                <div class="description">
+                    Salcedo, Fatima Riana A.
+                </div>
+            </div>
+
+            <!-- 30 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 30">
+                </div>
+                <div class="description">
+                    Sayadi, Marnia A.
+                </div>
+            </div>
+
+            <!-- 31 -->
+            <div class="item">
+                <div class="image-frame">
+                    <img src="profile.jpg" alt="Image 31">
+                </div>
+                <div class="description">
+                    Wingo, Datin Cayenne Miscka
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav>
+        <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/Alam9faraday.html">home</a>
+        <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/about%20school.html">about</a>
+        <a href="https://www.facebook.com/share/1LQzBf5sET/">contact</a>
+    </nav>
+
+</div>
+
+</body>
+</html>

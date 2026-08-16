@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>REGIONAL SCIENCE HIGH SCHOOL FOR REGION 9</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #b9d9a3;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            color: #795548;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fffef4;
+            border: 3px solid #b99b62;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(80, 80, 40, 0.15);
+        }
+
+        /* BANNER */
+
+        .banner {
+            width: 100%;
+            height: 370px;
+            background: #e9f2d0;
+            border-bottom: 5px solid #d9c58d;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* WELCOME */
+
+        .welcome {
+            background: #b7df65;
+            border: 3px solid #d4c27b;
+            margin: 8px;
+            padding: 16px;
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        /* MAIN */
+
+        .main {
+            display: grid;
+            grid-template-columns: 270px 1fr 230px;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        /* PROFILE */
+
+        .profile {
+            background: #fffef9;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 210px;
+            height: 210px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 5px solid #c8b77a;
+            background: #e8f2a7;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile h2 {
+            font-size: 30px;
+            font-weight: normal;
+            color: #875444;
+            margin-bottom: 5px;
+        }
+
+        .profile-info {
+            font-size: 20px;
+            line-height: 1.4;
+            color: #ad8b72;
+            margin-bottom: 15px;
+        }
+
+        .profile-box {
+            background: #9fc95b;
+            border: 3px solid #7ea847;
+            border-radius: 12px;
+            color: white;
+            text-align: left;
+            padding: 18px;
+            line-height: 1.6;
+        }
+
+        /* CONTENT */
+
+        .content {
+            background: white;
+            padding: 25px;
+        }
+
+        .decor {
+            text-align: center;
+            color: #79a942;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* IMAGE CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            border: 2px solid #dfc98c;
+            border-radius: 15px;
+            padding: 12px;
+            background: #fffdf4;
+        }
+
+        .card-title {
+            background: #b7df65;
+            color: white;
+            border-radius: 30px;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            border: 3px dashed #b9d56b;
+            border-radius: 10px;
+            background: #eef6d5;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #9b7765;
+        }
+
+        /* NAVIGATION */
+
+        .sidebar {
+            background: #9bd34b;
+            border-radius: 5px;
+            padding: 25px 15px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: white;
+            font-weight: normal;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .nav-button {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 10px;
+            background: #f4f7bd;
+            border: 3px solid #78a93c;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #795548;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+
+        .nav-button:hover {
+            background: white;
+            transform: scale(1.03);
+        }
+
+        .sidebar-text {
+            margin-top: 210px;
+            color: white;
+            line-height: 2;
+            font-size: 15px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                order: 3;
+            }
+
+            .profile {
+                order: 1;
+            }
+
+            .content {
+                order: 2;
+            }
+
+            .sidebar-text {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+
+            .banner {
+                height: 230px;
+            }
+
+            .welcome {
+                font-size: 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- BANNER IMAGE -->
+    <div class="banner">
+        <img src="banner.jpg" alt="banner">
+    </div>
+
+    <!-- WELCOME -->
+    <div class="welcome">
+        REGIONAL SCIENCE HIGH SCHOOL FOR REGION 9
+    </div>
+
+    <div class="main">
+
+        <!-- PROFILE -->
+        <div class="profile">
+
+            <!-- CIRCLE IMAGE -->
+            <div class="profile-image">
+                <img src="logo.jpg" alt="profile">
+            </div>
+
+            <h2>RSHS LOGO</h2>
+
+            <div class="profile-info">
+                Founded in 1994
+            </div>
+
+            <div class="profile-box">
+                The Regional Science High School for Region 9 is a premier institution dedicated to nurturing young minds in the fields of science and technology.
+            </div>
+
+        </div>
+
+
+        <!-- CENTER CONTENT -->
+        <div class="content">
+
+            <div class="decor">
+                ✿ ❀ ✿ ❀ ✿
+            </div>
+
+            <p class="intro">
+                The Regional Science High School for Region IX (RSHS-IX) is a public science-oriented school located in Malasiga, San Roque, Zamboanga City. Founded in 1994, it is special because it provides an enriched curriculum with a strong focus on Science, Mathematics, and research. It is considered a good school because it challenges students academically, develops their skills in science and other fields, and has produced students who have achieved recognition in academic and non-academic competitions.
+            </p>
+
+
+            <div class="cards">
+
+                <!-- IMAGE ONE -->
+                <div class="card">
+
+                    <div class="card-title">
+                        <img src="https://pixelsafari.neocities.org/dividers/shortgreenribbon.png" alt="lol">
+                    </div>
+
+                    <div class="card-image">
+                        <img src="card.jpg" alt="card 1">
+                    </div>
+
+                    <p>
+                        The Regional Science High School for Region IX also provides students with opportunities to develop their talents beyond regular classroom lessons. Students can participate in different school activities, organizations, competitions, and events that help improve their leadership, teamwork, communication, and creativity.
+                    </p>
+
+                </div>
+
+
+                <!-- IMAGE TWO -->
+                <div class="card">
+
+                    <div class="card-title">
+                        <img src="https://pixelsafari.neocities.org/dividers/shortgreenribbon.png" alt="lool">
+                    </div>
+
+                    <div class="card-image">
+                        <img src="card2.jpg" alt="card 2">
+                    </div>
+
+                    <p>
+                        Another special thing about the school is its strong sense of community. Students learn alongside classmates who share similar interests in academics and science, allowing them to work together on projects, experiments, and other activities. This creates an environment where students can challenge one another while building friendships and valuable experiences.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <div class="sidebar">
+
+            <h2>
+                navi
+            </h2>
+
+            <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/Alam9faraday.html" class="nav-button">
+                home
+            </a>
+
+            <a href="https://www.facebook.com/share/1LQzBf5sET/" class="nav-button">
+                contact
+            </a>
+            <a href="https://youtu.be/fqgSrY2K_og?si=xd7XtR19oT7oAsWW"
+   class="nav-button"
+   target="_blank">
+    RSHS 9 HYMN
+            </a>
+        
+               <span class= "sidebartitle">
+                MISSION
+               </span>
+               <P>
+                “Regional Science High School for Region IX, in partnership with the Local Government Units, Barangay Council, Parents-Teachers Association, Supreme Student Government, Alumni Association and other school organizations and stakeholders commit to develop responsible and morally upright Science-oriented leaders through relevant and globally competitive Science and Mathematics Education Programs.”
+               </P>
+               <br>
+               <span class= "sidebartitle">
+                VISSION
+               </span>
+               <P>
+            “A regional center of excellence in Science and Mathematics education at the secondary level that shall develop potential leaders in Science and related fields.”
+               </P>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

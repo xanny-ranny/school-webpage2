@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    #f8f3df 0px,
+                    #f8f3df 12px,
+                    #eee8d1 13px,
+                    #eee8d1 25px
+                );
+
+            font-family: Arial, sans-serif;
+            color: #70452e;
+            padding: 25px;
+        }
+
+        .site {
+            max-width: 1100px;
+            margin: auto;
+            background: #9a664c;
+            border: 15px solid #75462f;
+            border-radius: 55px;
+            overflow: hidden;
+            box-shadow:
+                inset 0 0 0 5px #b98063,
+                0 8px 0 #543324;
+        }
+
+        /* AWNING */
+
+        .awning {
+            height: 110px;
+            display: flex;
+            overflow: hidden;
+            border-bottom: 5px solid #70432e;
+        }
+
+        .stripe {
+            flex: 1;
+            border-radius: 0 0 35px 35px;
+            border-left: 3px solid #c5b795;
+            border-right: 3px solid #c5b795;
+        }
+
+        .cream {
+            background: #f8edcf;
+        }
+
+        .green {
+            background: #b9c979;
+        }
+
+        .brown {
+            background: #a36b50;
+        }
+
+        /* HEADER */
+
+        header {
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome {
+            width: 85%;
+            height: 110px;
+            background: #a96950;
+            border: 5px solid #70432e;
+            border-radius: 45px;
+            box-shadow: inset 0 0 0 3px #bb8064;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #fffaf0;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        /* NAVIGATION */
+
+        .navigation {
+            width: 70%;
+            height: 70px;
+            margin: 0 auto -2px;
+            background: #fffaf0;
+            border: 4px solid #e3d5bb;
+            border-bottom: none;
+            border-radius: 35px 35px 0 0;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navigation a {
+            flex: 1;
+            height: 40px;
+            background: #a36b50;
+            border: 3px solid #70432e;
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #fffaf0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+
+            transition: 0.2s;
+        }
+
+        .navigation a:hover {
+            background: #855036;
+        }
+
+        /* MAIN */
+
+        main {
+            margin: 0 45px;
+            background: #fffaf0;
+            border: 5px solid #e6d9c2;
+            border-radius: 45px;
+            overflow: hidden;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 150px;
+
+            background:
+                repeating-linear-gradient(
+                    135deg,
+                    #805034,
+                    #805034 12px,
+                    #71452f 12px,
+                    #71452f 24px
+                );
+
+            padding: 25px 30px;
+            color: white;
+        }
+
+        .subtitle {
+            height: 20px;
+        }
+
+        /* STATUS */
+
+        .status {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .status span {
+            flex: 1;
+            height: 40px;
+            background: #fffaf0;
+            color: #70452e;
+            border: 4px solid #613a28;
+            border-radius: 30px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* CONTENT */
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1.5fr;
+            gap: 22px;
+            padding: 20px;
+        }
+
+        /* IMAGE BOXES */
+
+        .image-placeholder {
+            width: 100%;
+            height: 130px;
+            margin-bottom: 15px;
+            border: 5px solid #a16c4d;
+            border-radius: 15px;
+            background: #e8d8b8;
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .large-placeholder {
+            width: 100%;
+            height: 270px;
+            border: 5px solid #a16c4d;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background: #e8d8b8;
+            overflow: hidden;
+        }
+
+        .large-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* TITLES */
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0 12px;
+            border-bottom: 3px dashed #d8c9ae;
+            padding-bottom: 12px;
+            min-height: 60px;
+        }
+
+        .circle {
+            width: 45px;
+            height: 45px;
+            background: #9bc15b;
+            border-radius: 50%;
+        }
+
+        /* TEXT BOXES */
+
+        .text-box {
+            min-height: 100px;
+            background: #f5e8c9;
+            border: 4px solid #e3cfaa;
+            border-radius: 25px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* BUTTONS */
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-buttons a {
+            height: 50px;
+            background: #855036;
+            border: 4px solid #6c402b;
+            border-radius: 18px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #fffaf0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 20px;
+            height: 70px;
+
+            background:
+                repeating-linear-gradient(
+                    135deg,
+                    #805034,
+                    #805034 12px,
+                    #71452f 12px,
+                    #71452f 24px
+                );
+
+            color: white;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .site {
+                border-width: 8px;
+                border-radius: 30px;
+            }
+
+            .welcome {
+                width: 90%;
+                height: 120px;
+                font-size: 32px;
+            }
+
+            .navigation {
+                width: 90%;
+            }
+
+            main {
+                margin: 0 15px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .left {
+                order: 3;
+            }
+
+            .middle {
+                order: 1;
+            }
+
+            .right {
+                order: 2;
+            }
+
+            .large-placeholder {
+                height: 230px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="site">
+
+    <!-- AWNING -->
+    <div class="awning">
+        <div class="stripe cream"></div>
+        <div class="stripe green"></div>
+        <div class="stripe cream"></div>
+        <div class="stripe brown"></div>
+        <div class="stripe green"></div>
+        <div class="stripe cream"></div>
+        <div class="stripe green"></div>
+    </div>
+
+
+    <!-- HEADER -->
+    <header>
+        <div class="welcome">
+            Welcome!
+        </div>
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/about%20school.html">About</a>
+        <a href="https://www.facebook.com/share/1LQzBf5sET/">Contact</a>
+    </nav>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <section class="hero">
+
+            <p class="subtitle">
+                CT: School Website(RSHS)
+            </p>
+
+            <div class="status">
+                <span>Submitted by: Samrina B. Alam</span>
+                <span>Section and grade: 9 Faraday</span>
+            </div>
+
+        </section>
+
+
+        <div class="content">
+
+            <!-- LEFT -->
+            <div class="left">
+
+                <div class="image-placeholder">
+                    <img src="pic.jpg" alt="Image One">
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="uwu.jpg" alt="Image Two">
+                </div>
+
+                <div class="social-buttons">
+
+                   <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/teachers.html">
+    9 FARADAY TEACHERS
+</a>
+
+                    <a href="file:///C:/Users/Acer/OneDrive/Desktop/Samrina%209%20FARADAY/students.html">9 FARADAY STUDENTS</a>
+
+                    
+
+                </div>
+
+            </div>
+
+
+            <!-- CENTER -->
+            <div class="middle">
+
+                <div class="title">
+
+                    <div class="circle">
+                    </div>
+
+                    Regional Science High School for Region IX
+
+                </div>
+
+                <div class="text-box">
+
+                    Regional is a prestigous school in Zamboanga City exclusively for student with analytic minds.
+
+                </div>
+
+                <div class="large-placeholder">
+                    <img src="grade9.jpg" alt="Large Image One">
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+            <div class="right">
+
+                <div class="large-placeholder">
+                    <img src="farday.jpg" alt="Large Image Two">
+                </div>
+
+                <div class="title">
+
+                    <div class="circle">
+                    </div>
+
+                    The Grade 9 Faraday Class
+
+                </div>
+
+                <div class="text-box">
+
+                    Faraday is one of the 9th grade classs in RSHS. THis website is dedicated to the grade 9 faraday and their teachers and students.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <img src="https://pixelsafari.neocities.org/text/textparty.gif" alt="Large Image One">
+    </footer>
+
+</div>
+
+</body>
